@@ -3,7 +3,8 @@
 // src/components/Header.tsx
 import React, { useRef, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { saveAs } from "file-saver";
 import Menu from "./Menu/Menu";

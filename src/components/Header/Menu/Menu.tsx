@@ -1,7 +1,9 @@
 // src/components/Menu.tsx
 import React, { useRef, useEffect, useState } from "react";
 
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from "next-view-transitions";
+
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 
@@ -59,6 +61,7 @@ const Menu: React.FC = () => {
           `}
           href={"/"}
         >
+          {/* {isActive(["/"]) ? <div className={styles.borderDown} /> : null} */}
           Dashboard
         </Link>
         <Link

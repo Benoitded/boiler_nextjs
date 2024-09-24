@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 // import "./globals.css";
 import ReownProvider from "@/context/reown";
 import Header from "@/components/Header/Header";
+import { ViewTransitions } from "next-view-transitions";
+
 import { headers } from "next/headers";
 import "@/styles/globals.css";
 import dynamic from "next/dynamic";
@@ -40,15 +42,17 @@ export default function RootLayout({
 
   //add gas component
   return (
-    <html lang="en">
-      <body>
-        <NoSSR>
-          <ReownProvider cookies={cookies}>
-            <Header />
-            {children}
-          </ReownProvider>
-        </NoSSR>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en">
+        <body>
+          <NoSSR>
+            <ReownProvider cookies={cookies}>
+              <Header />
+              {children}
+            </ReownProvider>
+          </NoSSR>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

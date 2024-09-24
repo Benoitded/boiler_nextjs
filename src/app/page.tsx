@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
+import { Link } from "next-view-transitions";
 
 export default function Home() {
   return (
@@ -17,6 +18,9 @@ export default function Home() {
         <li>Add the pages in the app/ folder</li>
         <li>Add the components in the components/ folder</li>
         <li>Add the API routes in the src/api/ folder</li>
+        <Link href="/second" className={styles.link}>
+          Go to second page
+        </Link>
       </ul>
     </div>
   );
