@@ -29,19 +29,30 @@
 
 body {
   margin: 0;
+  overflow: initial !important;
+
+  background: linear-gradient(180deg, #160813, #2c1027), #2c1027;
+  color: var(--main-text);
+
+  font-size: 16px;
+  /* font-family: "Satoshi", sans-serif; */
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.containerTotal {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-color: var(--main-background);
-  /* background-image: url("../assets/background.png"); */
-  color: var(--main-text);
-  font-family: "Satoshi", sans-serif;
-  font-weight: 500;
-  /* min-height: 100vh; */
+  justify-content: space-between;
+  align-items: center;
+  gap: 90px;
+
+  padding: 0 24px 16px 24px;
   box-sizing: border-box;
-  border-top: 0;
-  font-size: 16px;
-  padding: 0 24px;
+
+  min-height: 100vh;
+  height: 100%;
 }
 
 .imgBackground {
@@ -147,5 +158,11 @@ input:focus {
   }
   to {
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .containerTotal {
+    padding: 0 16px 16px 16px;
   }
 }

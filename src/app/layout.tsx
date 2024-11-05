@@ -1,6 +1,6 @@
 // @/app/layout.tsx
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 // import "./globals.css";
 import ReownProvider from "@/context/reown";
 import Header from "@/components/Header/Header";
@@ -32,6 +32,15 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  height: "device-height",
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -47,8 +56,10 @@ export default function RootLayout({
         <body>
           <NoSSR>
             <ReownProvider cookies={cookies}>
-              <Header />
-              {children}
+              <div className="containerTotal">
+                <Header />
+                {children}
+              </div>
             </ReownProvider>
           </NoSSR>
         </body>
