@@ -5,6 +5,7 @@ import type { Metadata, Viewport } from "next";
 import ReownProvider from "@/context/reown";
 import Header from "@/components/Header/Header";
 import { ViewTransitions } from "next-view-transitions";
+import { Toaster } from "react-hot-toast";
 
 import { headers } from "next/headers";
 import "@/styles/globals.css";
@@ -56,6 +57,15 @@ export default function RootLayout({
         <body>
           <NoSSR>
             <ReownProvider cookies={cookies}>
+              <Toaster
+                position="bottom-right"
+                toastOptions={{
+                  style: {
+                    background: "#111",
+                    color: "#FFF",
+                  },
+                }}
+              />
               <div className="containerTotal">
                 <Header />
                 {children}
